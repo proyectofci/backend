@@ -9,7 +9,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/cultivos")
 @Produces(MediaType.APPLICATION_JSON)
@@ -18,13 +20,14 @@ public class CultivoRecurso {
   CultivoServicio servicio = new CultivoServicio();
 
   @GET
-  public ArrayList<Cultivo> getCultivos() throws ClassNotFoundException, SQLException {
-    return servicio.getListaCultivos();
+  public Response getCultivos() throws ClassNotFoundException, SQLException {
+    ArrayList<Cultivo> cultivos = servicio.getListaCultivos();
+
+    GenericEntity<ArrayList<Cultivo>> entity = new GenericEntity<ArrayList<Cultivo>>(cultivos) {
+    };
+
+    return Response.status(Response.Status.OK)
+            .entity(entity)
+            .build();
   }
-
-//  @POST
-//  public void insertCultivo(Cultivo c) {
-//    return servicio.insertCultivo();
-//  }
-
 }

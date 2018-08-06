@@ -8,7 +8,14 @@ import java.sql.SQLException;
 public class ConexionMysql {
   
   // DESARROLLO
-    private final String server = "165.227.255.217";
+//    private final String server = "localhost";
+//    private final String dbname = "agroug";
+//    private final String port = "3306";
+//    private final String user = "user";
+//    private final String passw = "ReactNative@1984";
+    
+//    PRODUCCION
+      private final String server = "localhost";
     private final String dbname = "agroug";
     private final String port = "3306";
     private final String user = "user";
