@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html  ng-app="app" ng-controller="mainController as vm">
+  <head>
+    <title>FCI prueba</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <!--Angular librerias-->
+    <script src="angular/lib/angular.min.js"></script>
+    <!--Angular Modulos-->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+		<script src="app/app.factory.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="top">
+        <div class="group">
+          <button type="button" class="btn" ng-click="vm.cargarImagen()">Cargar Imagen</button>
+        </div>
+      </div>
+
+      <div class="inf">
+        <div class="img">
+          <h2 ng-bind="vm.imagen.ruta"></h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
