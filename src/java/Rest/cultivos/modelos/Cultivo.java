@@ -5,6 +5,7 @@ public class Cultivo {
   private int id;
   private String nombre;
   private String descripcion;
+  private String nombreCientifico;
   private String resena;
   private String rutaImagenMin;
   private String rutaImagenMax;
@@ -12,11 +13,12 @@ public class Cultivo {
   public Cultivo() {
   }
 
-  public Cultivo(int id, String nombre, String descripcion, String resena,
-          String rutaImagenMin, String rutaImagenMax) {
+  public Cultivo(int id, String nombre, String descripcion, String nombreCientifico,
+          String resena, String rutaImagenMin, String rutaImagenMax) {
     this.id = id;
     this.nombre = nombre;
     this.descripcion = descripcion;
+    this.nombreCientifico = nombreCientifico;
     this.resena = resena;
     this.rutaImagenMin = rutaImagenMin;
     this.rutaImagenMax = rutaImagenMax;
@@ -44,6 +46,14 @@ public class Cultivo {
 
   public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
+  }
+
+  public String getNombreCientifico() {
+    return nombreCientifico;
+  }
+
+  public void setNombreCientifico(String nombreCientifico) {
+    this.nombreCientifico = nombreCientifico;
   }
 
   public String getResena() {

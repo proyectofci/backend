@@ -18,6 +18,7 @@ public class CultivoDAO {
   private final String sCultivos = "select\n"
           + "  culId,\n"
           + "  culNombre,\n"
+          + "  culNombreCientifico,\n"
           + "  culDescripcion,\n"
           + "  culResenia,\n"
           + "  culRutaImagenMin,\n"
@@ -46,6 +47,7 @@ public class CultivoDAO {
                       rs.getInt("culId"),
                       rs.getString("culNombre"),
                       rs.getString("culDescripcion"),
+                      rs.getString("culNombreCientifico"),                      
                       rs.getString("culResenia"),
                       (rs.getString("culRutaImagenMin") == null ? "" : rs.getString("culRutaImagenMin")),
                       rs.getString("culRutaImagenMax")

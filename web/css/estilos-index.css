@@ -1,0 +1,266 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a:focus, a:hover{
+	text-decoration: none !important;
+}
+
+.contenedor-principal{
+	padding-bottom: 20px;
+}
+
+.header{
+	width: 100%;
+	padding: 12px 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__contenedor-logo{
+	display: flex;
+	align-items: center;
+}
+
+.header__logo{
+	width: 150px;
+	margin-left: 10px;
+}
+
+.header__logo img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.header__menu{
+	width: 50%;
+	display: flex;
+	margin-right: 20px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.menu__opciones{
+	display: flex;
+	font-size: 1rem;
+	margin-right: 30px;
+	padding-top: 5px;
+}
+
+.menu__boton{
+/*	flex-grow: 1;
+	flex-basis: 0;*/
+	padding: 0 10px 8px 10px;
+	margin: 0 10px;
+	color: #353537;
+	text-align: center;
+	/*border-bottom: 2px solid transparent;*/
+	transition: border-color .2s;
+	font-weight: 600;
+}
+
+.menu__boton:hover{
+	color: #07b57a;
+	border-color: #07b57a;	
+}
+
+.menu__boton--active{
+	color: #07b57a;
+	/*border-color: #07b57a;	*/
+}
+
+.login__boton{
+	border: 1px solid #07b57a;
+	padding: 6px 35px;
+	border-radius: 5px;
+	color: #009e31;
+	font-family: 'Montserrat';
+	transition: background .2s, border .4s, color .2s;
+}
+
+.login__boton:hover{
+/*	background: #353537;
+	border-color: #353537;
+	color: #fff;*/
+
+	background: #07b57a;
+	color: #fff;
+}
+
+.banner{
+	width: 100%;
+	background: #28282B;
+	position: relative;
+}
+
+.banner__img{
+	width: 100%;
+}
+
+.banner__img img{
+	width: 100%;
+	vertical-align: top;
+}
+
+
+.carousel__informacion{
+	position: absolute;
+	width: 80%;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.carousel__titulo{
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.7rem;
+	color: #fff;
+	font-weight: 600;
+	padding-bottom: 20px;
+}
+
+.carousel__descripcion{
+	width: 60%;
+	font-size: .8rem;
+	color: #F4F4F4;
+	padding-bottom: 10px;
+}
+
+.carousel__btn-mas{
+	font-weight: bold;
+	color: #fff;
+	padding: 5px 0px;
+	border-bottom: 3px solid transparent;
+}
+
+.carousel__btn-mas:hover{
+	color: #fff;
+	border-color: #fff;
+}
+
+.contenedor-main{
+	width: 80%;
+	margin: 30px auto;
+}
+
+.titulo-contenedor{
+	font-size: 2rem;
+	font-weight: 300;
+	font-family: 'Montserrat', sans-serif;
+	display:block;
+	text-align: center;
+	width: 300px;
+	margin: 20px auto;
+}
+
+.contenedor-cultivos{
+	width: 100%;
+	max-width: 1100px;
+	display: flex;
+	margin: 30px auto 0 auto;
+	justify-content: space-around;
+}
+
+.cultivo{
+	width: 20%;
+	margin-top: 10px;
+}
+
+.cultivo__active{
+	cursor: pointer;
+}
+
+.cultivo:hover .cultivo__img img{
+	transform: scale(1.1);
+}
+
+.cultivo__img{
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.cultivo__img img{
+	width: 100%;
+	vertical-align: top;
+	transition: border-radius .2s, transform .2s;
+}
+
+.cultivo__nombre{
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: #232323;
+}
+
+.cultivo__nombre-cientifico{
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+	color: #959595;
+	font-style: italic;
+}
+
+.informacion-cultivos{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 20px;
+	overflow: hidden;
+	/* display: none; */
+}
+
+
+.descripcion-cultivos{
+	width: 100%;
+	background: #EEEEEE;
+	padding: 25px;
+	position: relative;
+}
+
+/* .descripcion-cultivos:before{
+	content: '';
+    width: 0;
+	height: 0;
+	border-right: 20px solid transparent;
+	border-top: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-bottom: 20px solid #eeeeee;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: -39px auto;
+} */
+
+.arrow_up{
+	width: 100%;
+	background: #EEEEEE;
+	position: relative;
+	margin-top: 40px;
+}
+
+.arrow_up:before{
+	content: '';
+    width: 0;
+	height: 0;
+	border-right: 20px solid transparent;
+	border-top: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-bottom: 20px solid #eeeeee;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: -39px auto;
+}
+
+
+
+

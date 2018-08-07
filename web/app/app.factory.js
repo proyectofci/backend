@@ -2,25 +2,28 @@
   'use strict';
   angular
     .module('app')
-    .factory('data', data);
+    .factory('cultivoFactory', cultivoFactory);
 
-  data.$inject = ['$http', '$q'];
+    cultivoFactory.$inject = ['$http', '$q'];
 
-  function data($http, $q) {
+  function cultivoFactory($http, $q) {
 
     var factory = {
-      getImagen: getImagen,
-      data: {}
+      getCultivos: getCultivos,
+      cultivos: {}
     };
 
     return factory;
 
-    function getImagen() {
+    function getCultivos() {
       var q = $q.defer();
-      $http.get('configuracion.json')
+      $http.get('api/cultivos')
         .success(function (data) {
-          factory.data = data;
+          factory.cultivos = data;
           q.resolve();
+        })
+        .error(function (error) {
+          q.reject(error);
         });
       return q.promise;
     }
