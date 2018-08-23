@@ -23,22 +23,34 @@
         controllerAs: "vm",
       })
       .state("cultivo", {
+        abstract: true,
         url: "/cultivo",
+        templateUrl: "app/content.html",
+        data: {
+          pageTitle: "Cultivos"
+        },
+      })
+      .state("cultivo.lista", {
+        url: "/lista",
         templateUrl: "app/cultivo/cultivo.html",
         controller: "cultivoController",
         controllerAs: "vm",
         data: {
           pageTitle: "Cultivos"
         },
-        // resolve: {
-        //   loadPlugin: function ($ocLazyLoad) {
-        //     return $ocLazyLoad.load([
-        //       {
-        //         files: ['app/cultivo/cultivo.controller.js']
-        //       }
-        //     ]);
-        //   }
-        // },
+      })
+      .state("cultivo.afecciones", {
+        url: "/afecciones",
+        params: {
+          idTipo: null,
+          idCultivo: null
+        },
+        templateUrl: "app/cultivo/afecciones/afecciones.html",
+        controller: "afeccionesController",
+        controllerAs: "vm",
+        data: {
+          pageTitle: "Afecciones"
+        },
       })
       .state("diagnostico", {
         url: "/diagnostico",

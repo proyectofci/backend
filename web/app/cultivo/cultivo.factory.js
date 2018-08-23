@@ -14,6 +14,7 @@
       getTipoAfecciones: getTipoAfecciones,
       cultivos: {},
       allCultivos: [],
+      tiposAfecciones: [],
     };
 
     return factory;
@@ -46,9 +47,9 @@
 
     function getTipoAfecciones() {
       var q = $q.defer();
-      $http.get('api/cultivos')
+      $http.get('api/afecciones/tipos')
         .success(function (data) {
-          factory.cultivos = data;
+          factory.tiposAfecciones = data;
           q.resolve();
         })
         .error(function (error) {

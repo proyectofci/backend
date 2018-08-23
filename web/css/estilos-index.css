@@ -459,6 +459,7 @@ ul.breadcrumb li a:hover {
 
 .fila-enfermedades{
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: center;
 }
 
@@ -467,6 +468,7 @@ ul.breadcrumb li a:hover {
 	cursor: pointer;
 	position: relative;
 	width: 200px;
+	min-width: 200px;
 }
 
 .enfermedad__imagen{

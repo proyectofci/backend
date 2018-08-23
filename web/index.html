@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html ng-app="app" ng-controller="mainController as vm">
-
 <head>
   <title>Proyecto FCI</title>
   <meta charset="UTF-8">
@@ -29,7 +28,7 @@
       <section class="header__menu">
         <nav class="menu__opciones">
           <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('inicio')}" ui-sref="inicio">Home</a>
-          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('cultivo')}"  ui-sref="cultivo">Cultivos</a>
+          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('cultivo')}"  ui-sref="cultivo.lista">Cultivos</a>
           <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('diagnostico')}"  ui-sref="diagnostico">Diagnostico</a>
           <a class="menu__boton">Recomendaciones</a>
         </nav>
@@ -58,6 +57,10 @@
   <!-- cultivos -->
   <script src="app/cultivo/cultivo.controller.js"></script>
   <script src="app/cultivo/cultivo.factory.js"></script>
+
+  <!-- afecciones -->
+  <script src="app/cultivo/afecciones/afecciones.controller.js"></script>
+  <script src="app/cultivo/afecciones/afecciones.factory.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,48 @@
+(function () {
+  'use strict';
+
+  angular
+    .module('app')
+    .controller('afeccionesController', afeccionesController);
+
+  afeccionesController.$inject = ["afeccionesFactory", "$state",
+    "$stateParams", "$window", "cultivoFactory"
+  ];
+
+  function afeccionesController(afeccionesFactory, $state,
+    $stateParams, $window, cultivoFactory) {
+    var vm = this;
+    vm.cargarAfecciones = cargarAfecciones;
+
+    vm.data = afeccionesFactory;
+    vm.idTipo = $stateParams.idTipo;
+    vm.idCultivo = $stateParams.idCultivo;
+    vm.cultivo = {
+      nombre: "",
+      nombreCientifico: "",
+      imagen: "",
+    };
+
+    for (var index = 0; index < cultivoFactory.allCultivos.length; index++) {
+      if (vm.idCultivo === cultivoFactory.allCultivos[index].id) {
+        vm.cultivo.nombre = cultivoFactory.allCultivos[index].nombre;
+        vm.cultivo.nombreCientifico = cultivoFactory.allCultivos[index].nombreCientifico;
+        vm.cultivo.imagen = cultivoFactory.allCultivos[index].imagen;
+      }
+    }
+
+    vm.data.afecciones = [];
+
+    cargarAfecciones();
+
+    function cargarAfecciones() {
+      return afeccionesFactory.getAfecciones(vm.idTipo, vm.idCultivo)
+        .then(function () {
+          vm.data = afeccionesFactory;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
+})();

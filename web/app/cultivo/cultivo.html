@@ -10,148 +10,29 @@
           <h2 class="cultivo__nombre-comun" ng-bind="cultivo.nombre"></h2>
           <h5 class="cultivo__nombre-cientifico" ng-bind="cultivo.nombreCientifico"></h5>
           <p class="cultivo__descripcion" ng-bind="cultivo.descripcion">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet vitae ad aut eum voluptatibus quasi ipsam, odio sapiente eligendi officia dolorum explicabo cumque quos atque reprehenderit dolores assumenda culpa quas.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet vitae ad aut
+            eum voluptatibus quasi ipsam, odio sapiente eligendi officia dolorum explicabo
+            cumque quos atque reprehenderit dolores assumenda culpa quas.
           </p>
         </div>
 
         <div class="cultivo__contenedor-opciones">
           <div class="contenedor">
-            <div class="cultivo__opciones menu">
-              <a class="btn-afecciones" ng-click="vm.verTipoAfecciones()">Afecciones</a>
+            <div class="cultivo__opciones menu" id="cultivo__opciones{{$index}}">
+              <a class="btn-afecciones" ng-click="vm.verTipoAfecciones($index)">Afecciones</a>
               <a href="">Diagnosticar</a>
               <a href="">Recomendaciones</a>
             </div>
 
             <div class="cultivo__sub-opciones">
-              <a href="afeccion.html">Enfermedades</a>
-              <a href="">Plagas</a>
-              <a href="">Malezas</a>
-              <a class="btn-volver">Volver</a>
+              <a ng-repeat="tipo in vm.data.tiposAfecciones" ng-bind="tipo.nombre"  ui-sref="cultivo.afecciones({
+                idTipo: tipo.id, 
+                idCultivo: cultivo.id})"></a>
+              <a class="btn-volver" ng-click="vm.volverAfecciones($index)">Volver</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-<!-- 
-    <div class="cultivo">
-      <div class="cultivo__imagen">
-        <img src="https://raw.githubusercontent.com/proyectofci/proyecto/master/cacao.jpg" alt="">
-      </div>
-
-      <div class="cultivo__informacion">
-        <div class="cultivo__datos">
-          <h2 class="cultivo__nombre-comun">ARROZ</h2>
-          <h5 class="cultivo__nombre-cientifico">Theobroma cacao</h5>
-          <p class="cultivo__descripcion">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet vitae ad aut eum voluptatibus quasi ipsam, odio sapiente eligendi officia dolorum explicabo cumque quos atque reprehenderit dolores assumenda culpa quas.
-          </p>
-        </div>
-
-        <div class="cultivo__contenedor-opciones">
-          <div class="contenedor">
-            <div class="cultivo__opciones menu">
-              <a class="btn-afecciones">Afecciones</a>
-              <a href="">Diagnosticar</a>
-              <a href="">Recomendaciones</a>
-            </div>
-
-            <div class="cultivo__sub-opciones">
-              <a href="">Enfermedades</a>
-              <a href="">Plagas</a>
-              <a href="">Malezas</a>
-              <a class="btn-volver">Volver</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="cultivo">
-      <div class="cultivo__imagen">
-        <img src="https://raw.githubusercontent.com/proyectofci/proyecto/master/cafe.jpg" alt="">
-      </div>
-
-      <div class="cultivo__informacion">
-        <div class="cultivo__datos">
-          <h2 class="cultivo__nombre-comun">CAFE</h2>
-          <h5 class="cultivo__nombre-cientifico">Coffea</h5>
-          <p class="cultivo__descripcion">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet vitae ad aut eum voluptatibus quasi ipsam, odio sapiente eligendi officia dolorum explicabo cumque quos atque reprehenderit dolores assumenda culpa quas.
-          </p>
-        </div>
-
-        <div class="cultivo__contenedor-opciones">
-          <div class="contenedor">
-            <div class="cultivo__opciones menu">
-              <a class="btn-afecciones">Afecciones</a>
-              <a href="">Diagnosticar</a>
-              <a href="">Recomendaciones</a>
-            </div>
-
-            <div class="cultivo__sub-opciones">
-              <a href="">Enfermedades</a>
-              <a href="">Plagas</a>
-              <a href="">Malezas</a>
-              <a class="btn-volver">Volver</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-      <!-- <div class="cultivo">
-        <div class="cultivo__imagen">
-          <img src="../img/banana.jpg" alt="">
-        </div>
-
-        <div class="cultivo__informacion">
-          <div class="cultivo__datos">
-            <h2 class="cultivo__nombre-comun">CAFE</h2>
-            <h5 class="cultivo__nombre-cientifico">Coffea</h5>
-            <p class="cultivo__descripcion">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet vitae ad aut eum voluptatibus quasi ipsam, odio sapiente eligendi officia dolorum explicabo cumque quos atque reprehenderit dolores assumenda culpa quas.
-            </p>
-          </div>
-
-          <div class="cultivo__contenedor-opciones">
-            <div class="contenedor">
-              <div class="cultivo__opciones menu">
-                <a class="btn-afecciones">Afecciones</a>
-                <a href="">Diagnosticar</a>
-                <a href="">Recomendaciones</a>
-              </div>
-
-              <div class="cultivo__sub-opciones">
-                <a href="">Enfermedades</a>
-                <a href="">Plagas</a>
-                <a href="">Malezas</a>
-                <a class="btn-volver">Volver</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
   </section>
 </div>
-<script>
-  $(document).ready(function() {
-    var btnAfecciones = $(".btn-afecciones");
-    var btnVolver = $(".btn-volver");
-    var menuAfecciones;
-
-    btnAfecciones.click(function(){
-      menuAfecciones = $(this).parent();
-      menuAfecciones.animate({
-        'margin-left' : '-100%'
-      }, 250);
-    });
-
-    btnVolver.click(function(){
-      console.log('asd');
-      menuAfecciones = $(this).parent().prev();
-      menuAfecciones.animate({
-        'margin-left' : '0'
-      },250);
-    });
-  });
-</script>

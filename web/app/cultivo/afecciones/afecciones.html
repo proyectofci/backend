@@ -1,0 +1,35 @@
+<div>
+
+  <section class="contenedor-breadcrumb">
+    <ul class="breadcrumb" id="breadcrumb">
+      <li><a href="#">Cultivos</a></li>
+      <li><a href="#">Enfermedades</a></li>
+    </ul> 
+  </section>
+
+  <section class="enfer-contenedor-cultivo">
+    <div class="enfer-cultivo">
+      <div class="enfer-cultivo__imagen">
+        <img ng-src="{{vm.cultivo.imagen}}"  alt="">
+      </div>
+
+      <h2 class="enfer-cultivo__nombre-comun" ng-bind="vm.cultivo.nombre"></h2>
+      <h5 class="enfer-cultivo__nombre-cientifico" ng-bind="vm.cultivo.nombreCientifico"></h5>
+    </div>
+  </section>
+
+  <section class="contenedor-enfermedades" id="contenedor-enfermedades">
+    <div class="fila-enfermedades">
+      <div class="enfermedad" ng-repeat="afeccion in vm.data.afecciones">
+        <div class="enfermedad__imagen">
+          <img ng-src="{{afeccion.rutaImagen}}" alt="">
+        </div>
+
+        <div class="enfermedad__informacion">
+          <h2 class="enfermedad__nombre-comun" ng-bind="afeccion.nombre"></h2>
+          <h5 class="enfermedad__nombre-cientifico" ng-bind="afeccion.nombreCientifico"></h5>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
