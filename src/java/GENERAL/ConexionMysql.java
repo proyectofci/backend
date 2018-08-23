@@ -13,13 +13,19 @@ public class ConexionMysql {
 //    private final String port = "3306";
 //    private final String user = "user";
 //    private final String passw = "ReactNative@1984";
+//    
+    private final String server = "agrouginstance.cnoq0sjsxakz.us-east-1.rds.amazonaws.com";
+    private final String dbname = "agroug";
+    private final String port = "3306";
+    private final String user = "user";
+    private final String passw = "reload20";
   
-//    PRODUCCION
-  private final String server = "localhost";
-  private final String dbname = "agroug";
-  private final String port = "3306";
-  private final String user = "user";
-  private final String passw = "ReactNative@1984";
+////    PRODUCCION
+//  private final String server = "localhost";
+//  private final String dbname = "agroug";
+//  private final String port = "3306";
+//  private final String user = "user";
+//  private final String passw = "ReactNative@1984";
 
   private Connection con;
 

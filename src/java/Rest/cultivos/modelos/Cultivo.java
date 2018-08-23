@@ -4,24 +4,22 @@ public class Cultivo {
 
   private int id;
   private String nombre;
-  private String descripcion;
   private String nombreCientifico;
   private String resena;
-  private String rutaImagenMin;
-  private String rutaImagenMax;
+  private String descripcion;
+  private String imagen;
 
   public Cultivo() {
   }
 
-  public Cultivo(int id, String nombre, String descripcion, String nombreCientifico,
-          String resena, String rutaImagenMin, String rutaImagenMax) {
+  public Cultivo(int id, String nombre, String nombreCientifico,
+          String resena, String descripcion, String imagen) {
     this.id = id;
     this.nombre = nombre;
-    this.descripcion = descripcion;
     this.nombreCientifico = nombreCientifico;
     this.resena = resena;
-    this.rutaImagenMin = rutaImagenMin;
-    this.rutaImagenMax = rutaImagenMax;
+    this.descripcion = descripcion;
+    this.imagen = imagen;
   }
 
   public int getId() {
@@ -40,14 +38,6 @@ public class Cultivo {
     this.nombre = nombre;
   }
 
-  public String getDescripcion() {
-    return descripcion;
-  }
-
-  public void setDescripcion(String descripcion) {
-    this.descripcion = descripcion;
-  }
-
   public String getNombreCientifico() {
     return nombreCientifico;
   }
@@ -64,20 +54,20 @@ public class Cultivo {
     this.resena = resena;
   }
 
-  public String getRutaImagenMin() {
-    return rutaImagenMin;
+  public String getDescripcion() {
+    return descripcion;
   }
 
-  public void setRutaImagenMin(String rutaImagenMin) {
-    this.rutaImagenMin = rutaImagenMin;
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
   }
 
-  public String getRutaImagenMax() {
-    return rutaImagenMax;
+  public String getImagen() {
+    return imagen;
   }
 
-  public void setRutaImagenMax(String rutaImagenMax) {
-    this.rutaImagenMax = rutaImagenMax;
+  public void setImagen(String imagen) {
+    this.imagen = imagen;
   }
 
 }

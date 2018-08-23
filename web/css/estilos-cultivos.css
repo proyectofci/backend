@@ -1,0 +1,102 @@
+.contenedor-cultivos{
+	width: 85%;
+	max-width: 1250px;
+	margin: 50px auto;
+	padding: 30px;
+	background: #f6f6f6;
+}
+
+.cultivo{
+	width: 100%;
+	background: #fff;
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.cultivo__imagen{
+	width: 18%;
+	min-width: 200px;
+	max-width: 200px;
+}
+
+.cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.cultivo__informacion{
+	width: 100%;
+	border-bottom: 4px solid #0eb57a;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cultivo__datos{
+	padding: 20px 20px 0 20px;
+	width: 80%;
+}
+
+.cultivo__nombre-comun{
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.cultivo__nombre-cientifico{
+	color: #959595;
+	font-size: 1rem;
+	font-style: italic;
+}
+
+.cultivo__descripcion{
+	font-size: .9rem;
+	color: #303030;
+	margin-top: 1em;
+	width: 80%;
+}
+
+.cultivo__contenedor-opciones{
+	padding: 20px 10px;
+	width: 30%;
+	overflow: hidden;
+}
+
+.cultivo__contenedor-opciones
+.contenedor{
+	width: 200%;
+	display: flex;
+}
+
+.cultivo__opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__sub-opciones{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.cultivo__opciones a,
+.cultivo__sub-opciones a{
+	/*display: block;*/
+	width: 75%;
+	padding: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #353537;
+	font-size: .95rem;
+	cursor: pointer;
+}
+
+.cultivo__opciones a:hover,
+.cultivo__sub-opciones a:hover{
+	color: #0eb57a !important;
+}
+
+.cultivo__sub-opciones a{
+	font-weight: 600;
+	font-size: .9rem;
+	padding: 5px 10px;
+}

@@ -1,0 +1,44 @@
+.contenedor-cultivo{
+	width: 50%;
+	margin: 50px auto;
+	/*border-bottom: 1px solid #0eb57a;*/
+	padding-bottom: 20px;
+}
+
+.cultivo{
+	width: 30%;
+	margin: 0 auto;
+}
+
+.cultivo__imagen{
+	width: 100%;
+}
+
+.cultivo__imagen img{
+	width: 100%;
+	vertical-align: top;
+}
+
+.cultivo__nombre-comun{
+	font-weight: bold;
+	text-align: center;
+	font-size: 2rem;
+	padding-top: 15px;
+}
+
+.cultivo__nombre-cientifico{
+	font-size: 1.2rem;
+	font-style: italic;
+	color: #959595;
+	text-align: center;
+}
+
+.contenedor-enfermedades{
+	background: #f6f6f6;
+	width: 85%;
+	margin: 0 auto;
+}
+
+.fila-enfermades{
+	display: flex;
+}

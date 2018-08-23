@@ -15,30 +15,34 @@ public class CultivoDAO {
     con = new ConexionMysql();
   }
 
-  private final String sCultivos = "select\n"
+  private String sCultivoById = "SELECT\n"
           + "  culId,\n"
           + "  culNombre,\n"
           + "  culNombreCientifico,\n"
-          + "  culDescripcion,\n"
           + "  culResenia,\n"
-          + "  culRutaImagenMin,\n"
-          + "  culRutaImagenMax\n"
-          + "from cultivos\n"
-          + "where culEstado = 1 ";
+          + "  culDescripcion,\n"
+          + "  culRutaImagenMax as imagen\n"
+          + "FROM cultivos\n"
+          + "where culId = ?\n"
+          + "and culEstado = 1";
 
-  private final String sMaxIdCultivo = "select max(culId) as maximo from cultivos";
+  private String sAllCultivos = "SELECT\n"
+          + "  culId,\n"
+          + "  culNombre,\n"
+          + "  culNombreCientifico,\n"
+          + "  culResenia,\n"
+          + "  culDescripcion,\n"
+          + "  culRutaImagenMax as imagen\n"
+          + "FROM cultivos\n"
+          + "WHERE culEstado = 1";
 
-  private final String iCultivo = "insert into cultivos\n"
-          + "(culId, culNombre, culDescripcion, culResenia, culRutaImagenMax, culRutaImagenMin, culEstado)\n"
-          + "values\n"
-          + "  (?, ?, ?, ?, ?, ?, ?)";
-
-  public ArrayList<Cultivo> getlistaCultivos()
+  public ArrayList<Cultivo> getlistaCultivos(String tipoOs)
           throws ClassNotFoundException, SQLException {
     ArrayList<Cultivo> lista = new ArrayList<>();
 
     con.conectar();
-    PreparedStatement ps = con.prepareStatement(sCultivos);
+    PreparedStatement ps = con.prepareStatement("call SP_BUSCAR_CULTIVOS(?)");
+    ps.setString(1, tipoOs);
     ResultSet rs = ps.executeQuery();
 
     while (rs.next()) {
@@ -46,11 +50,10 @@ public class CultivoDAO {
               new Cultivo(
                       rs.getInt("culId"),
                       rs.getString("culNombre"),
-                      rs.getString("culDescripcion"),
-                      rs.getString("culNombreCientifico"),                      
+                      rs.getString("culNombreCientifico"),
                       rs.getString("culResenia"),
-                      (rs.getString("culRutaImagenMin") == null ? "" : rs.getString("culRutaImagenMin")),
-                      rs.getString("culRutaImagenMax")
+                      rs.getString("culDescripcion"),
+                      (rs.getString("imagen") == null ? "" : rs.getString("imagen"))
               )
       );
     }
@@ -58,37 +61,57 @@ public class CultivoDAO {
     rs.close();
     con.cerrar();
     return lista;
-
   }
-//
-//  public int insertCultivo(Cultivo c) throws ClassNotFoundException, SQLException {
-//    con.conectar();
-//    con.autoCommit(false);
-//
-//    try {
-//      int maxId;
-//      PreparedStatement ps = con.prepareStatement(sMaxIdCultivo);
-//      ResultSet rs = ps.executeQuery();
-//      rs.next();
-//      maxId = rs.getInt("maximo");
-//
-//      ps = con.prepareStatement(iCultivo);
-//      int resultado = ps.executeUpdate();
-//      ps.setInt(1, maxId);
-//      ps.setString(2, c.getNombre());
-//      ps.setString(3, c.getResena());
-//      ps.setString(4, c.getRutaImagenMax());
-//      ps.setString(5, c.getRutaImagenMin());
-//      ps.setInt(6, c.c);
-//
-//      con.Commit();
-//      con.cerrar();
-//    } catch (Exception e) {
-//
-//      con.Rollback();
-//      con.cerrar();
-//    }
-//
-//  }
+
+  public ArrayList<Cultivo> getAllCultivos()
+          throws ClassNotFoundException, SQLException {
+    ArrayList<Cultivo> lista = new ArrayList<>();
+
+    con.conectar();
+    PreparedStatement ps = con.prepareStatement(sAllCultivos);
+    ResultSet rs = ps.executeQuery();
+
+    while (rs.next()) {
+      lista.add(
+              new Cultivo(
+                      rs.getInt("culId"),
+                      rs.getString("culNombre"),
+                      rs.getString("culNombreCientifico"),
+                      rs.getString("culResenia"),
+                      rs.getString("culDescripcion"),
+                      (rs.getString("imagen") == null ? "" : rs.getString("imagen"))
+              )
+      );
+    }
+
+    rs.close();
+    con.cerrar();
+    return lista;
+  }
+
+  public Cultivo getCultivoById(int idCultivo)
+          throws ClassNotFoundException, SQLException {
+    con.conectar();
+    PreparedStatement ps = con.prepareStatement(sCultivoById);
+    ps.setInt(1, idCultivo);
+    ResultSet rs = ps.executeQuery();
+
+    Cultivo c = null;
+    if (rs.next()) {
+      c = new Cultivo(
+              rs.getInt("culId"),
+              rs.getString("culNombre"),
+              rs.getString("culNombreCientifico"),
+              rs.getString("culResenia"),
+              rs.getString("culDescripcion"),
+              (rs.getString("imagen") == null ? "" : rs.getString("imagen"))
+      );
+    }
+
+    rs.close();
+    con.cerrar();
+
+    return c;
+  }
 
 }
