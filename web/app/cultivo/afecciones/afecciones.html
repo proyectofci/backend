@@ -1,5 +1,4 @@
 <div>
-
   <section class="contenedor-breadcrumb">
     <ul class="breadcrumb" id="breadcrumb">
       <li><a href="#">Cultivos</a></li>
@@ -20,7 +19,11 @@
 
   <section class="contenedor-enfermedades" id="contenedor-enfermedades">
     <div class="fila-enfermedades">
-      <div class="enfermedad" ng-repeat="afeccion in vm.data.afecciones">
+      <div class="enfermedad" 
+        ng-repeat="afeccion in vm.data.afecciones"
+        ui-sref="cultivo.afeccion({
+          idCultivo: vm.cultivo.id,
+          idAfeccion: afeccion.id})">
         <div class="enfermedad__imagen">
           <img ng-src="{{afeccion.rutaImagen}}" alt="">
         </div>

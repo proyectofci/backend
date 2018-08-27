@@ -23,7 +23,30 @@ public class AfeccionesDAO {
           + "from tipos_afecciones\n"
           + "where tipAfeEstado = 1";
 
-  public ArrayList getTiposAfecciones() throws ClassNotFoundException, SQLException {
+  private final String sAfeccionCultivo = "SELECT\n"
+          + "		CUL.culId,\n"
+          + "		CUL.culNombre,\n"
+          + "        DCA.cauAfeId,\n"
+          + "        DCA.cauAfeNombreComun,\n"
+          + "		DCA.cauAfeNombreCientifico,\n"
+          + "    DCA.cauAfeDescripcion,\n"
+          + "		DCA.cauAfeRutaImagen,\n"
+          + "		TIP.tipAfeNombre\n"
+          + "	FROM cultivos CUL\n"
+          + "	JOIN ponderaciones PON\n"
+          + "		ON PON.culId = CUL.culId\n"
+          + "	JOIN diagnostico DIA\n"
+          + "		ON DIA.ponId = PON.ponId\n"
+          + "	JOIN diagnostico_causas_afecciones DCA\n"
+          + "		ON DCA.diaId = DIA.diaId\n"
+          + "	JOIN tipos_afecciones TIP\n"
+          + "		ON DCA.tipAfeId = TIP.tipAfeId\n"
+          + "	WHERE\n"
+          + "		CUL.culId = ? AND\n"
+          + "		TIP.tipAfeId = ?";
+
+  public ArrayList getTiposAfecciones() 
+          throws ClassNotFoundException, SQLException {
     ArrayList<TipoAfecciones> lista = new ArrayList<>();
     con.conectar();
     PreparedStatement ps = con.prepareStatement(sTiposAfecciones);
@@ -46,9 +69,9 @@ public class AfeccionesDAO {
           throws ClassNotFoundException, SQLException {
     ArrayList<Afeccion> lista = new ArrayList<>();
     con.conectar();
-    PreparedStatement ps = con.prepareStatement("call SP_SELECCIONAR_AFECCION_CULTIVO(?, ?)");
-    ps.setInt(1, idTipoAfeccion);
-    ps.setInt(2, idCultivo);
+    PreparedStatement ps = con.prepareStatement(sAfeccionCultivo);
+    ps.setInt(1, idCultivo);
+    ps.setInt(2, idTipoAfeccion);
     ResultSet rs = ps.executeQuery();
     while (rs.next()) {
       lista.add(
@@ -56,6 +79,7 @@ public class AfeccionesDAO {
                       rs.getInt("cauAfeId"),
                       rs.getString("cauAfeNombreComun"),
                       rs.getString("cauAfeNombreCientifico"),
+                      rs.getString("cauAfeDescripcion"),
                       rs.getString("cauAfeRutaImagen")
               )
       );

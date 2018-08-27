@@ -5,15 +5,18 @@ public class Afeccion {
   private int id;
   private String nombre;
   private String nombreCientifico;
+  private String descripcion;
   private String rutaImagen;
 
   public Afeccion() {
   }
 
-  public Afeccion(int id, String nombre, String nombreCientifico, String rutaImagen) {
+  public Afeccion(int id, String nombre, String nombreCientifico,
+          String descripcion, String rutaImagen) {
     this.id = id;
     this.nombre = nombre;
     this.nombreCientifico = nombreCientifico;
+    this.descripcion = descripcion;
     this.rutaImagen = rutaImagen;
   }
 
@@ -39,6 +42,14 @@ public class Afeccion {
 
   public void setNombreCientifico(String nombreCientifico) {
     this.nombreCientifico = nombreCientifico;
+  }
+
+  public String getDescripcion() {
+    return descripcion;
+  }
+
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
   }
 
   public String getRutaImagen() {

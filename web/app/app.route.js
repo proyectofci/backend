@@ -52,6 +52,19 @@
           pageTitle: "Afecciones"
         },
       })
+      .state("cultivo.afeccion", {
+        url: "/afeccion",
+        params: {
+          idCultivo: null,
+          idAfeccion: null,
+        },
+        templateUrl: "app/cultivo/afeccion/afeccion.html",
+        controller: "afeccionController",
+        controllerAs: "vm",
+        data: {
+          pageTitle: "Afeccion"
+        },
+      })
       .state("diagnostico", {
         url: "/diagnostico",
         templateUrl: "app/diagnostico/diagnostico.html",

@@ -20,7 +20,6 @@
       return cultivoFactory.getCultivos()
         .then(function () {
           vm.data = cultivoFactory;
-          console.log(vm.data);
         })
         .catch(function (error) {
           console.log(error);

@@ -1,0 +1,72 @@
+<div>
+  <section class="contenedor-breadcrumb">
+    <ul class="breadcrumb" id="breadcrumb">
+      <li><a href="#">Cultivos</a></li>
+      <li><a href="#">Enfermedades</a></li>
+    </ul> 
+  </section>
+  <section class="enfer-contenedor-cultivo">
+    <div class="enfer-cultivo">
+      <div class="enfer-cultivo__imagen">
+        <img ng-src="{{vm.cultivo.imagen}}"  alt="">
+      </div>
+      <h2 class="enfer-cultivo__nombre-comun" ng-bind="vm.cultivo.nombre"></h2>
+      <h5 class="enfer-cultivo__nombre-cientifico" ng-bind="vm.cultivo.nombreCientifico"></h5>
+    </div>
+  </section>
+  <section class="contenedor-tratamiento" id="contenedor-tratamiento">
+    <div class="contenedor-tratamiento-interior">
+      <div class="enfermedad-elegida">
+        <div class="enfermedad-elegida-img">
+          <img ng-src="{{vm.afeccion.imagen}}" alt="" id="img-enfermedad-elegida">
+        </div>
+        <h2 class="enfermedad__nombre-comun" ng-bind="vm.afeccion.nombre"></h2>
+        <h5 class="enfermedad__nombre-cientifico" ng-bind="vm.afeccion.nombreCientifico"></h5>
+      </div>
+
+      <div class="tratamiento">
+        <p class="descripcion-caracteristica" ng-bind="vm.afeccion.descripcion">
+        </p>
+      </div>
+    </div>
+
+    <div class="contenedor-tratamiento-interior">
+      <div class="enfermedad-elegida">
+        <div class="tipos-tratamientos">
+          <span class="titulo-tipos">Tratamientos</span>
+          <ul class="lista-tratamientos">
+            <li><a class="tratamiento-activo">Solvendazim</a></li>
+            <li><a>Soas</a></li>
+            <li><a>Soluction B asd</a></li> 
+          </ul>
+        </div>
+        <a class="btn-mostrar-afecciones">Regresar</a>
+      </div>
+
+      <div class="tratamiento">
+        <article class="caracteristicas-tratamiento">
+          <h3 class="titulo-caracteristica">Accion Fitosanitaria</h3>
+          <p class="descripcion-caracteristica">
+            Es un fungicida sistémico de amplio espectro de control sobre algunas enfermedades 
+            fungosas en varios cultivos de sierra
+            y costa.
+          </p>
+        </article>
+        <article class="caracteristicas-tratamiento">
+          <h3 class="titulo-caracteristica">Aplicacion de dosis</h3>
+          <p class="descripcion-caracteristica">
+            0,3 - 0,35 l/ha Aplicar al inicio de la infeccion y al embuchamiento.
+          </p>
+        </article>
+        <article class="caracteristicas-tratamiento">
+          <h3 class="titulo-caracteristica">Modo de aplicacion</h3>
+          <p class="descripcion-caracteristica">
+            Agregar la cantidad necesaria en la mitad del volumes de agua requerido, 
+            agitar lo suficiente hasta lograr una mezcla homogénea
+            y luego complete el resto del volumen con agua.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>

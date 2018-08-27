@@ -11,7 +11,6 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link rel="shortcut icon" href="img/favicon/favicon_32.png" />
- 
 </head>
 
 <body>
@@ -29,7 +28,7 @@
         <nav class="menu__opciones">
           <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('inicio')}" ui-sref="inicio">Home</a>
           <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('cultivo')}"  ui-sref="cultivo.lista">Cultivos</a>
-          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('diagnostico')}"  ui-sref="diagnostico">Diagnostico</a>
+          <!-- <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('diagnostico')}"  ui-sref="diagnostico">Diagnostico</a> -->
           <a class="menu__boton">Recomendaciones</a>
         </nav>
 
@@ -61,6 +60,10 @@
   <!-- afecciones -->
   <script src="app/cultivo/afecciones/afecciones.controller.js"></script>
   <script src="app/cultivo/afecciones/afecciones.factory.js"></script>
+
+  <!-- afeccion -->
+  <script src="app/cultivo/afeccion/afeccion.controller.js"></script>
+  <script src="app/cultivo/afeccion/afeccion.factory.js"></script>
 </body>
 
 </html>
