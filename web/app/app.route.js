@@ -73,12 +73,10 @@
         }
       })
       .state("recomendaciones", {
-        url: "/encuesta",
-        templateUrl: "app/encuesta/encuesta.jsp",
-        controller: "encController",
-        controllerAs: "vm",
+        url: "/recomendaciones",
+        templateUrl: "app/recomendaciones/recomendaciones.html",        
         data: {
-          pageTitle: "Encuesta"
+          pageTitle: "Recomendaciones"
         }
       });
   }

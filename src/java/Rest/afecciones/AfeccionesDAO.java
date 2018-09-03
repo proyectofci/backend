@@ -45,7 +45,28 @@ public class AfeccionesDAO {
           + "		CUL.culId = ? AND\n"
           + "		TIP.tipAfeId = ?";
 
-  public ArrayList getTiposAfecciones() 
+  private final String sAfeccionById = "SELECT\n"
+          + "  CUL.culId,\n"
+          + "  CUL.culNombre,\n"
+          + "  DCA.cauAfeId,\n"
+          + "  DCA.cauAfeNombreComun,\n"
+          + "  DCA.cauAfeNombreCientifico,\n"
+          + "  DCA.cauAfeDescripcion,\n"
+          + "  DCA.cauAfeRutaImagen,\n"
+          + "  TIP.tipAfeNombre\n"
+          + "FROM cultivos CUL\n"
+          + "  JOIN ponderaciones PON\n"
+          + "    ON PON.culId = CUL.culId\n"
+          + "  JOIN diagnostico DIA\n"
+          + "    ON DIA.ponId = PON.ponId\n"
+          + "  JOIN diagnostico_causas_afecciones DCA\n"
+          + "    ON DCA.diaId = DIA.diaId\n"
+          + "  JOIN tipos_afecciones TIP\n"
+          + "    ON DCA.tipAfeId = TIP.tipAfeId\n"
+          + "WHERE\n"
+          + "  cauAfeId =  ?";
+
+  public ArrayList getTiposAfecciones()
           throws ClassNotFoundException, SQLException {
     ArrayList<TipoAfecciones> lista = new ArrayList<>();
     con.conectar();
@@ -88,6 +109,30 @@ public class AfeccionesDAO {
     rs.close();
     con.cerrar();
     return lista;
+  }
+
+  public Afeccion getAfeccionById(int idAfeccion)
+          throws ClassNotFoundException, SQLException {
+    Afeccion afeccion = null;
+    con.conectar();
+    PreparedStatement ps = con.prepareStatement(sAfeccionById);
+    ps.setInt(1, idAfeccion);
+
+    ResultSet rs = ps.executeQuery();
+    while (rs.next()) {
+      afeccion = new Afeccion(
+              rs.getInt("cauAfeId"),
+              rs.getString("cauAfeNombreComun"),
+              rs.getString("cauAfeNombreCientifico"),
+              rs.getString("cauAfeDescripcion"),
+              rs.getString("cauAfeRutaImagen")
+      );
+
+    }
+
+    rs.close();
+    con.cerrar();
+    return afeccion;
   }
 
 }

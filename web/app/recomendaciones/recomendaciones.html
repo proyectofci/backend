@@ -1,0 +1,34 @@
+<div>
+  <section class="contenedor-mapa">
+    <div class="informacion-mapa">
+      <h2 class="titulo">Cultivos en tu zona geografica</h2>
+
+      <div class="form-group mt-5">
+        <label for="">Tu ubicacion</label>
+        <span>Guayaquil, Guayas, Ecuador</span>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="">Cultivos disponibles</label>
+
+        <ul>
+          <li><a href=""><img alt=""> Arroz</a></li>
+          <li><a href=""><img alt=""> Arroz</a></li>
+          <li><a href=""><img alt=""> Arroz</a></li>
+        </ul>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="">Ubicaciones</label>
+        <ul id="lista-ubicaciones">          
+        </ul>
+      </div>
+    </div>
+    <div id="map" class="mapa"></div>
+  </section>  
+  <script src="app/recomendaciones/mapa.js">
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_dsAT20E0ghFohbTiSSaINcPXqTLANt0&callback=initMap&region=ES"
+    async defer></script>
+</div>

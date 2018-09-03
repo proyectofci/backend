@@ -1,18 +1,19 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-a:focus, a:hover{
+a:focus,
+a:hover {
 	text-decoration: none !important;
 }
 
-.contenedor-principal{
+.contenedor-principal {
 	padding-bottom: 20px;
 }
 
-.header{
+.header {
 	width: 100%;
 	padding: 12px 20px;
 	display: flex;
@@ -20,22 +21,22 @@ a:focus, a:hover{
 	border-bottom: 1px solid #eeeeee;
 }
 
-.header__contenedor-logo{
+.header__contenedor-logo {
 	display: flex;
 	align-items: center;
 }
 
-.header__logo{
+.header__logo {
 	width: 150px;
 	margin-left: 10px;
 }
 
-.header__logo img{
+.header__logo img {
 	width: 100%;
 	vertical-align: top;
 }
 
-.header__menu{
+.header__menu {
 	width: 50%;
 	display: flex;
 	margin-right: 20px;
@@ -43,14 +44,14 @@ a:focus, a:hover{
 	align-items: center;
 }
 
-.menu__opciones{
+.menu__opciones {
 	display: flex;
 	font-size: 1rem;
 	margin-right: 30px;
 	padding-top: 5px;
 }
 
-.menu__boton{
+.menu__boton {
 	padding: 0 10px 8px 10px;
 	margin: 0 10px;
 	color: #353537;
@@ -59,16 +60,16 @@ a:focus, a:hover{
 	font-weight: 600;
 }
 
-.menu__boton:hover{
+.menu__boton:hover {
 	color: #07b57a;
-	border-color: #07b57a;	
+	border-color: #07b57a;
 }
 
-.menu__boton--active{
+.menu__boton--active {
 	color: #07b57a;
 }
 
-.login__boton{
+.login__boton {
 	border: 1px solid #07b57a;
 	padding: 6px 35px;
 	border-radius: 5px;
@@ -77,28 +78,27 @@ a:focus, a:hover{
 	transition: background .2s, border .4s, color .2s;
 }
 
-.login__boton:hover{
+.login__boton:hover {
 	background: #07b57a;
 	color: #fff;
 }
 
-.banner{
+.banner {
 	width: 100%;
 	background: #28282B;
 	position: relative;
 }
 
-.banner__img{
+.banner__img {
 	width: 100%;
 }
 
-.banner__img img{
+.banner__img img {
 	width: 100%;
 	vertical-align: top;
 }
 
-
-.carousel__informacion{
+.carousel__informacion {
 	position: absolute;
 	width: 80%;
 	bottom: 50px;
@@ -107,7 +107,7 @@ a:focus, a:hover{
 	margin: 0 auto;
 }
 
-.carousel__titulo{
+.carousel__titulo {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.7rem;
 	color: #fff;
@@ -115,21 +115,21 @@ a:focus, a:hover{
 	padding-bottom: 20px;
 }
 
-.carousel__descripcion{
+.carousel__descripcion {
 	width: 60%;
 	font-size: .8rem;
 	color: #F4F4F4;
 	padding-bottom: 10px;
 }
 
-.carousel__btn-mas{
+.carousel__btn-mas {
 	font-weight: bold;
 	color: #fff;
 	padding: 5px 0px;
 	border-bottom: 3px solid transparent;
 }
 
-.carousel__btn-mas:hover{
+.carousel__btn-mas:hover {
 	color: #fff;
 	border-color: #fff;
 }
@@ -138,22 +138,22 @@ a:focus, a:hover{
 						HOME 
 ===========================================*/
 
-.home-contenedor-main{
+.home-contenedor-main {
 	width: 80%;
 	margin: 30px auto;
 }
 
-.home-titulo-contenedor{
+.home-titulo-contenedor {
 	font-size: 2rem;
 	font-weight: 300;
 	font-family: 'Montserrat', sans-serif;
-	display:block;
+	display: block;
 	text-align: center;
 	width: 300px;
 	margin: 20px auto;
 }
 
-.home-contenedor-cultivos{
+.home-contenedor-cultivos {
 	width: 100%;
 	max-width: 1100px;
 	display: flex;
@@ -161,32 +161,32 @@ a:focus, a:hover{
 	justify-content: space-around;
 }
 
-.home-cultivo{
+.home-cultivo {
 	width: 20%;
 	margin-top: 10px;
 }
 
-.home-cultivo__active{
+.home-cultivo__active {
 	cursor: pointer;
 }
 
-.home-cultivo:hover .home_cultivo__img img{
+.home-cultivo:hover .home_cultivo__img img {
 	transform: scale(1.1);
 }
 
-.home-cultivo__img{
+.home-cultivo__img {
 	width: 100%;
 	border-radius: 50%;
 	overflow: hidden;
 }
 
-.home-cultivo__img img{
+.home-cultivo__img img {
 	width: 100%;
 	vertical-align: top;
 	transition: border-radius .2s, transform .2s;
 }
 
-.home-cultivo__nombre{
+.home-cultivo__nombre {
 	display: block;
 	width: 100%;
 	margin-top: 20px;
@@ -196,7 +196,7 @@ a:focus, a:hover{
 	color: #232323;
 }
 
-.home-cultivo__nombre-cientifico{
+.home-cultivo__nombre-cientifico {
 	display: block;
 	text-align: center;
 	font-size: 1rem;
@@ -204,7 +204,7 @@ a:focus, a:hover{
 	font-style: italic;
 }
 
-.home-informacion-cultivos{
+.home-informacion-cultivos {
 	width: 90%;
 	margin: 0 auto;
 	text-align: center;
@@ -213,49 +213,57 @@ a:focus, a:hover{
 	/* display: none; */
 }
 
-.home-descripcion-cultivos{
+.home-descripcion-cultivos {
 	width: 100%;
 	background: #EEEEEE;
 	padding: 25px;
 	position: relative;
 }
-.home-contenedor-mas{
+
+.home-contenedor-mas {
 	margin: 50px auto;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 }
-.home-btn-mas.active.focus,.home-btn-mas.active:focus,
-.home-btn-mas.focus,.home-btn-mas:active.focus,.home-btn-mas:active:focus,.home-btn-mas:focus{
-  outline:0;
+
+.home-btn-mas.active.focus,
+.home-btn-mas.active:focus,
+.home-btn-mas.focus,
+.home-btn-mas:active.focus,
+.home-btn-mas:active:focus,
+.home-btn-mas:focus {
+	outline: 0;
 }
-.home-btn-mas{
+
+.home-btn-mas {
 	background-color: #1ab394;
-  border-color: #1ab394;
-  color: #FFFFFF;
-  padding:6px 12px;
-  margin-bottom:0;
-  font-size:14px;
-  font-weight:400;
-  line-height:1.42857143;
-  text-align:center;
-  white-space:nowrap;
-  vertical-align:middle;
-  -ms-touch-action:manipulation;
-  touch-action:manipulation;
-  cursor:pointer;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
-  background-image:none;
-  border:1px solid transparent;
-  border-radius:4px
+	border-color: #1ab394;
+	color: #FFFFFF;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px
 }
-.home-btn-mas:hover{
-  background-color: #18a689;
-  border-color: #18a689;
-  color: #FFFFFF;
+
+.home-btn-mas:hover {
+	background-color: #18a689;
+	border-color: #18a689;
+	color: #FFFFFF;
 }
 
 /* .home-descripcion-cultivos:before{
@@ -277,7 +285,7 @@ a:focus, a:hover{
 						CULTIVOS 
 ===========================================*/
 
-.contenedor-cultivos{
+.contenedor-cultivos {
 	width: 85%;
 	max-width: 1250px;
 	margin: 50px auto;
@@ -285,80 +293,79 @@ a:focus, a:hover{
 	background: #f6f6f6;
 }
 
-.cultivo{
+.cultivo {
 	width: 100%;
 	background: #fff;
 	display: flex;
 	margin-bottom: 30px;
 }
 
-.cultivo__imagen{
+.cultivo__imagen {
 	width: 18%;
 	min-width: 200px;
 	max-width: 200px;
 }
 
-.cultivo__imagen img{
+.cultivo__imagen img {
 	width: 100%;
 	vertical-align: top;
 }
 
-.cultivo__informacion{
+.cultivo__informacion {
 	width: 100%;
 	border-bottom: 4px solid #0eb57a;
 	display: flex;
 	justify-content: space-between;
 }
 
-.cultivo__datos{
+.cultivo__datos {
 	padding: 20px 20px 0 20px;
 	width: 80%;
 }
 
-.cultivo__nombre-comun{
+.cultivo__nombre-comun {
 	font-weight: bold;
 	font-size: 1.5rem;
 }
 
-.cultivo__nombre-cientifico{
+.cultivo__nombre-cientifico {
 	color: #959595;
 	font-size: 1rem;
 	font-style: italic;
 }
 
-.cultivo__descripcion{
+.cultivo__descripcion {
 	font-size: .9rem;
 	color: #303030;
 	margin-top: 1em;
 	width: 80%;
 }
 
-.cultivo__contenedor-opciones{
+.cultivo__contenedor-opciones {
 	padding: 20px 10px;
 	width: 30%;
 	overflow: hidden;
 }
 
-.cultivo__contenedor-opciones
-.contenedor{
+.cultivo__contenedor-opciones .contenedor {
 	width: 200%;
 	display: flex;
 }
 
-.cultivo__opciones{
+.cultivo__opciones {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-.cultivo__sub-opciones{
+.cultivo__sub-opciones {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
 .cultivo__opciones a,
-.cultivo__sub-opciones a{
+.cultivo__sub-opciones a {
 	/*display: block;*/
 	width: 75%;
 	padding: 10px;
@@ -370,11 +377,11 @@ a:focus, a:hover{
 }
 
 .cultivo__opciones a:hover,
-.cultivo__sub-opciones a:hover{
+.cultivo__sub-opciones a:hover {
 	color: #0eb57a !important;
 }
 
-.cultivo__sub-opciones a{
+.cultivo__sub-opciones a {
 	font-weight: 600;
 	font-size: .9rem;
 	padding: 5px 10px;
@@ -384,86 +391,86 @@ a:focus, a:hover{
 						AFECCION 
 ===========================================*/
 
-.contenedor-breadcrumb{
+.contenedor-breadcrumb {
 	background: #fff;
 }
 
 ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
+	padding: 10px 16px;
+	list-style: none;
 }
 
 ul.breadcrumb li {
-    display: inline;
-    font-size: .8rem;
-    color: #0eb57a;
-    font-weight: 600;
+	display: inline;
+	font-size: .8rem;
+	color: #0eb57a;
+	font-weight: 600;
 }
 
 ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: ">";
+	padding: 8px;
+	color: black;
+	content: ">";
 }
 
 ul.breadcrumb li a {
-    color: #959595;
-    text-decoration: none;
+	color: #959595;
+	text-decoration: none;
 }
 
 ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
+	color: #01447e;
+	text-decoration: underline;
 }
 
-.enfer-contenedor-cultivo{
+.enfer-contenedor-cultivo {
 	width: 50%;
 	margin: 50px auto;
 	padding-bottom: 0px;
 }
 
-.enfer-cultivo{
+.enfer-cultivo {
 	width: 30%;
 	max-width: 250px;
 	margin: 0 auto;
 }
 
-.enfer-cultivo__imagen{
+.enfer-cultivo__imagen {
 	width: 100%;
 }
 
-.enfer-cultivo__imagen img{
+.enfer-cultivo__imagen img {
 	width: 100%;
 	vertical-align: top;
 	border-radius: 50%;
 }
 
-.enfer-cultivo__nombre-comun{
+.enfer-cultivo__nombre-comun {
 	font-weight: bold;
 	text-align: center;
 	font-size: 2rem;
 	padding-top: 15px;
 }
 
-.enfer-cultivo__nombre-cientifico{
+.enfer-cultivo__nombre-cientifico {
 	font-size: 1.2rem;
 	font-style: italic;
 	color: #959595;
 	text-align: center;
 }
 
-.contenedor-enfermedades{
+.contenedor-enfermedades {
 	width: 70%;
 	margin: 0 auto;
 }
 
-.fila-enfermedades{
+.fila-enfermedades {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 }
 
-.enfermedad{
+.enfermedad {
 	margin: 25px 20px;
 	cursor: pointer;
 	position: relative;
@@ -471,93 +478,91 @@ ul.breadcrumb li a:hover {
 	min-width: 200px;
 }
 
-.enfermedad__imagen{
+.enfermedad__imagen {
 	width: 100%;
 	background: #000;
 	overflow: hidden;
 }
 
-.enfermedad__imagen img{
+.enfermedad__imagen img {
 	width: 100%;
 	vertical-align: top;
 	opacity: .9;
 	transition: opacity .2s, transform .2s;
 }
 
-.enfermedad__informacion{
-	padding:10px 20px;
+.enfermedad__informacion {
+	padding: 10px 20px;
 	background: #fff;
 	border-bottom: 3px solid transparent;
-	transition: border .2s;	
+	transition: border .2s;
 }
 
-.enfermedad:hover
-.enfermedad__informacion{
+.enfermedad:hover .enfermedad__informacion {
 	border-color: #0eb57a;
 }
 
-.enfermedad:hover
-.enfermedad__imagen img{
+.enfermedad:hover .enfermedad__imagen img {
 	opacity: 1;
 	transform: scale(1.1);
 }
 
-.enfermedad__nombre-comun{
+.enfermedad__nombre-comun {
 	font-size: 1.15rem;
 }
 
-.enfermedad__nombre-cientifico{
+.enfermedad__nombre-cientifico {
 	font-size: .9rem;
 	color: #959595;
 	font-style: italic;
 	margin-top: -5px;
 }
 
-.contenedor-tratamiento{
+.contenedor-tratamiento {
 	width: 80%;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
-.contenedor-tratamiento-interior{
+.contenedor-tratamiento-interior {
 	display: flex;
 	width: 100%;
 }
 
-.enfermedad-elegida{
+.enfermedad-elegida {
 	width: 30%;
 }
 
-.enfermedad-elegida-img{
+.enfermedad-elegida-img {
 	width: 100%;
 	max-width: 200px;
 	margin: 0 auto 10px auto;
 }
 
-.enfermedad-elegida-img img{
+.enfermedad-elegida-img img {
 	width: 100%;
 	vertical-align: top;
 }
 
-.enfermedad-elegida > h2,
-.enfermedad-elegida > h5{
+.enfermedad-elegida>h2,
+.enfermedad-elegida>h5 {
 	text-align: center;
 }
 
-.enfermedad-elegida > h2{
+.enfermedad-elegida>h2 {
 	font-weight: 600;
 }
 
-.tratamiento{
+.tratamiento {
 	width: 70%;
 	padding: 0 30px;
 }
 
-.caracteristicas-tratamiento{
+.caracteristicas-tratamiento {
 	margin-top: 30px;
 }
 
-.titulo-caracteristica{
+.titulo-caracteristica {
 	padding-bottom: 5px;
 	font-size: 1rem;
 	font-weight: 600;
@@ -567,12 +572,11 @@ ul.breadcrumb li a:hover {
 	padding: 5px 10px;
 }
 
-.descripcion-caracteristica{
+.descripcion-caracteristica {
 	padding: 5px 10px;
 }
 
-
-.tipos-tratamientos{
+.tipos-tratamientos {
 	width: 70%;
 	max-width: 300px;
 	margin: 30px auto;
@@ -580,12 +584,12 @@ ul.breadcrumb li a:hover {
 	position: relative;
 }
 
-.tipos-tratamientos > span,
-.tipos-tratamientos > a{
+.tipos-tratamientos>span,
+.tipos-tratamientos>a {
 	display: block;
 }
 
-.titulo-tipos{
+.titulo-tipos {
 	font-size: 1rem;
 	font-weight: 600;
 	background: #0eb57a;
@@ -594,14 +598,17 @@ ul.breadcrumb li a:hover {
 	text-align: center;
 }
 
-.lista-tratamientos{list-style: none;width: 100%}
+.lista-tratamientos {
+	list-style: none;
+	width: 100%
+}
 
-.lista-tratamientos li{
+.lista-tratamientos li {
 	width: 100%;
 	position: relative;
 }
 
-.lista-tratamientos li a{
+.lista-tratamientos li a {
 	color: #000;
 	cursor: pointer;
 	font-size: .9rem;
@@ -611,7 +618,7 @@ ul.breadcrumb li a:hover {
 	position: relative;
 }
 
-.lista-tratamientos li:before{
+.lista-tratamientos li:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -624,25 +631,26 @@ ul.breadcrumb li a:hover {
 	z-index: 0;
 }
 
-.tratamiento-activo{
+.tratamiento-activo {
 	font-weight: bold;
 	color: #0eb57a !important;
 }
 
-.lista-tratamientos li a:hover{
-	color: #fff !important;		
+.lista-tratamientos li a:hover {
+	color: #fff !important;
 }
 
-.lista-tratamientos li:hover:before{
+.lista-tratamientos li:hover:before {
 	width: 100%;
 }
 
-.tipos-tratamientos > a{
+.tipos-tratamientos>a {
 	color: #000;
 	cursor: pointer;
 	margin-bottom: 5px;
 }
-.btn-mostrar-afecciones{
+
+.btn-mostrar-afecciones {
 	margin: 50px auto;
 	color: #fff !important;
 	font-weight: 600;
@@ -670,16 +678,16 @@ ul.breadcrumb li a:hover {
 	margin: -39px auto;
 } */
 
-.arrow_up{
+.arrow_up {
 	width: 100%;
 	background: #EEEEEE;
 	position: relative;
 	margin-top: 40px;
 }
 
-.arrow_up:before{
+.arrow_up:before {
 	content: '';
-    width: 0;
+	width: 0;
 	height: 0;
 	border-right: 20px solid transparent;
 	border-top: 20px solid transparent;
@@ -690,4 +698,60 @@ ul.breadcrumb li a:hover {
 	left: 0;
 	right: 0;
 	margin: -39px auto;
+}
+
+.contenedor-mapa {
+	width: 80%;
+	height: 500px;
+	margin: 50px auto;
+	display: flex;
+}
+
+.informacion-mapa {
+	width: 50%;
+}
+
+.mapa {
+	width: 50%;
+	height: 100%;
+}
+
+.titulo {
+	font-weight: 300;
+}
+
+.form-group label {
+	font-weight: 600;
+}
+
+.form-group span {
+	padding: 2px 0px;
+	border-bottom: 1px solid #0eb57a;
+	display: inline-block;
+	width: 300px;
+	margin-left: 10px;
+	font-size: .95rem;
+	color: #6C6C6C;
+}
+
+.form-group ul {
+	list-style: none;
+}
+
+.form-group ul li {
+	margin-bottom: 4px;
+}
+
+.form-group ul li a:hover {
+	margin-left: 5px;
+}
+
+.form-group ul li a {
+	color: #000 !important;
+	display: inline;
+	transition: margin-left .2s;
+}
+
+.form-group ul li img {
+	width: 10px;
 }

@@ -12,13 +12,16 @@
   function afeccionController(afeccionFactory, $state,
     $stateParams, $window, afeccionesFactory, cultivoFactory) {
     var vm = this;
-    vm.cargarAfeccion = cargarAfeccion;
+    vm.cargarTratamientos = cargarTratamientos;
+    vm.cargarTratamiento = cargarTratamiento;
 
     vm.data = afeccionFactory;
     vm.idCultivo = $stateParams.idCultivo;
     vm.idAfeccion = $stateParams.idAfeccion;
+    vm.tratamientoActual = 0;
 
-    console.log(vm.idCultivo + "  ==== " + vm.idAfeccion);
+    afeccionFactory.tratamientos = [];
+    afeccionFactory.tratamiento = {};
 
     vm.cultivo = {
       nombre: "",
@@ -27,13 +30,14 @@
     };
 
     vm.afeccion = {
+      id: 0,
       nombre: "",
       nombreCientifico: "",
       imagen: "",
       descripcion: "",
     };
 
-    console.log(cultivoFactory.allCultivos);
+    cargarTratamientos();
 
     for (var i = 0; i < cultivoFactory.allCultivos.length; i++) {
       if (vm.idCultivo === cultivoFactory.allCultivos[i].id) {
@@ -45,6 +49,7 @@
 
     for (var j = 0; j < afeccionesFactory.afecciones.length; j++) {
       if (vm.idAfeccion === afeccionesFactory.afecciones[j].id) {
+        vm.afeccion.id = afeccionesFactory.afecciones[j].id;
         vm.afeccion.nombre = afeccionesFactory.afecciones[j].nombre;
         vm.afeccion.nombreCientifico = afeccionesFactory.afecciones[j].nombreCientifico;
         vm.afeccion.imagen = afeccionesFactory.afecciones[j].rutaImagen;
@@ -52,14 +57,30 @@
       }
     }
 
-    function cargarAfeccion() {
-      return afeccionesFactory.getAfeccion(vm.idTipo, vm.idCultivo)
+    function cargarTratamientos() {
+      return afeccionFactory.getTratamientos(vm.idAfeccion)
         .then(function () {
-          vm.data = afeccionesFactory;
+          vm.data = afeccionFactory;
+          if (vm.data.tratamientos.length > 0) {
+            cargarTratamiento(vm.data.tratamientos[0].id);
+          }
         })
         .catch(function (error) {
           console.log(error);
         });
     }
+
+    function cargarTratamiento(idTratamiento) {
+      vm.tratamientoActual = idTratamiento;
+      return afeccionFactory.getTratamiento(idTratamiento)
+        .then(function () {
+          vm.data = afeccionFactory;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+
   }
 })();

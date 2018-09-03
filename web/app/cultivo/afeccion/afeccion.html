@@ -29,41 +29,42 @@
         </p>
       </div>
     </div>
-
     <div class="contenedor-tratamiento-interior">
       <div class="enfermedad-elegida">
         <div class="tipos-tratamientos">
           <span class="titulo-tipos">Tratamientos</span>
-          <ul class="lista-tratamientos">
-            <li><a class="tratamiento-activo">Solvendazim</a></li>
-            <li><a>Soas</a></li>
-            <li><a>Soluction B asd</a></li> 
+          <ul class="lista-tratamientos">           
+            <li ng-repeat="tratamiento in vm.data.tratamientos"
+              ng-click="vm.cargarTratamiento(tratamiento.id)"
+              ng-class="{'tratamiento-activo': vm.tratamientoActual === tratamiento.id}">
+              <a ng-bind="tratamiento.nombreProducto"></a>
+            </li> 
           </ul>
         </div>
         <a class="btn-mostrar-afecciones">Regresar</a>
       </div>
 
       <div class="tratamiento">
+        <h4 ng-bind="'Descripción de tratamiento: '+ vm.data.tratamiento.nombreProducto"> </h4>
         <article class="caracteristicas-tratamiento">
-          <h3 class="titulo-caracteristica">Accion Fitosanitaria</h3>
-          <p class="descripcion-caracteristica">
-            Es un fungicida sistémico de amplio espectro de control sobre algunas enfermedades 
-            fungosas en varios cultivos de sierra
-            y costa.
+          <h4 class="titulo-caracteristica">Accion Fitosanitaria</h4>
+          <p class="descripcion-caracteristica" ng-bind="vm.data.tratamiento.acccionFitosanitaria">          
           </p>
         </article>
         <article class="caracteristicas-tratamiento">
           <h3 class="titulo-caracteristica">Aplicacion de dosis</h3>
-          <p class="descripcion-caracteristica">
-            0,3 - 0,35 l/ha Aplicar al inicio de la infeccion y al embuchamiento.
+          <p class="descripcion-caracteristica" ng-bind="vm.data.tratamiento.aplicacionDosis">
+            
           </p>
         </article>
         <article class="caracteristicas-tratamiento">
           <h3 class="titulo-caracteristica">Modo de aplicacion</h3>
-          <p class="descripcion-caracteristica">
-            Agregar la cantidad necesaria en la mitad del volumes de agua requerido, 
-            agitar lo suficiente hasta lograr una mezcla homogénea
-            y luego complete el resto del volumen con agua.
+          <p class="descripcion-caracteristica"  ng-bind="vm.data.tratamiento.aplicacionModo">          
+          </p>
+        </article>
+        <article class="caracteristicas-tratamiento">
+          <h3 class="titulo-caracteristica">Cantidad de dosis</h3>
+          <p class="descripcion-caracteristica"  ng-bind="vm.data.tratamiento.cantidadDosis">
           </p>
         </article>
       </div>

@@ -1,0 +1,29 @@
+{
+	"direcciones":[
+		{
+			"nombre": "Provincia de Esmeraldas",
+			"latitud": 0.7577307,
+			"longitud": -79.8195083
+		},
+		{
+			"nombre": "Babahoyo, Los Rios",
+			"latitud": -1.8062645,
+			"longitud": -79.5507153
+		},
+		{
+			"nombre": "Guayaquil, Guayas",
+			"latitud": -2.152381,
+			"longitud": -80.1199504
+		},
+		{
+			"nombre": "Machala, El Oro",
+			"latitud": -3.2568589,
+			"longitud": -79.9960489
+		},
+		{
+			"nombre": "Provincia de Pastaza",
+			"latitud": -1.8564031,
+			"longitud": -78.0616969
+		}
+	]
+}

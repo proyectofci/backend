@@ -19,6 +19,10 @@ public class AfeccionesServicio {
     return tipoAfecciones;
   }
 
+  public Afeccion getAfeccionById(int id) throws ClassNotFoundException, SQLException {
+    return DB.getAfeccionById(id);
+  }
+
   public ArrayList<Afeccion> getAfeccionesByIdTipoAfeccionIdCultivo(
           int idTipoAfeccion, int idCultivo)
           throws ClassNotFoundException, SQLException {

@@ -25,9 +25,9 @@ public class AfeccionesRecurso {
   public Response getAfeccion(@PathParam("id") int id) {
 
     try {
-      ArrayList<TipoAfecciones> tipos = servicio.getListaTipos();
-      GenericEntity<ArrayList<TipoAfecciones>> entity
-              = new GenericEntity<ArrayList<TipoAfecciones>>(tipos) {
+      Afeccion afeccion = servicio.getAfeccionById(id);
+      GenericEntity<Afeccion> entity
+              = new GenericEntity<Afeccion>(afeccion) {
       };
 
       return Response.status(Response.Status.OK)
