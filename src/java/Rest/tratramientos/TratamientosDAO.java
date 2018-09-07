@@ -83,9 +83,3 @@ public class TratamientosDAO {
   }
 
 }
-
-//
-//rs.getString("traAccionFitosanitaria"),
-//              rs.getString("afeTraDosisCantidad"),
-//              rs.getString("afeTraDosisAplicacion"),
-//              rs.getString("afeModoAplicacion")

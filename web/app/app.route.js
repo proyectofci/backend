@@ -72,8 +72,8 @@
           pageTitle: "Diagnostico"
         }
       })
-      .state("recomendaciones", {
-        url: "/recomendaciones",
+      .state("mapa", {
+        url: "/mapa",
         templateUrl: "app/recomendaciones/recomendaciones.html",        
         data: {
           pageTitle: "Recomendaciones"

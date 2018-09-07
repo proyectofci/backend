@@ -26,10 +26,16 @@
 
       <section class="header__menu">
         <nav class="menu__opciones">
-          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('inicio')}" ui-sref="inicio">Home</a>
-          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('cultivo')}"  ui-sref="cultivo.lista">Cultivos</a>
+          <a class="menu__boton" 
+            ng-class="{'menu__boton--active': $state.includes('inicio')}" 
+            ui-sref="inicio">Home</a>
+          <a class="menu__boton" 
+            ng-class="{'menu__boton--active': $state.includes('cultivo')}" 
+            ui-sref="cultivo.lista">Cultivos</a>
           <!-- <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('diagnostico')}"  ui-sref="diagnostico">Diagnostico</a> -->
-          <a class="menu__boton" ng-class="{'menu__boton--active': $state.includes('recomendaciones')}" ui-sref="recomendaciones">Recomendaciones</a>
+          <a class="menu__boton" 
+            ng-class="{'menu__boton--active': $state.includes('mapa')}" 
+            ui-sref="mapa">Mapa</a>
         </nav>
 
         <div class="menu__login">
